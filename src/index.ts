@@ -1,10 +1,15 @@
 import 'dotenv/config'
 import express, { Request, Response } from 'express'
 import createError from 'http-errors'
+import bodyParser from 'body-parser'
+import cors from 'cors'
 
 import { usersRoute, authRoute } from './routes'
 
 const app = express()
+
+app.use(bodyParser.json())
+app.use(cors())
 
 app.use('/auth', authRoute)
 app.use('/users', usersRoute)
