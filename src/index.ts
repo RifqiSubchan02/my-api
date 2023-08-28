@@ -11,10 +11,10 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
-app.use('/auth', authRoute)
-app.use('/users', usersRoute)
+app.use('/api/auth', authRoute)
+app.use('/api/users', usersRoute)
 
-app.get('/', (req: Request, res: Response) => res.send('Welcome to My API'))
+app.get('/api', (req: Request, res: Response) => res.send('Welcome to My API'))
 
 app.use((req: Request, res: Response, next: Function) => {
   next(createError(404))
