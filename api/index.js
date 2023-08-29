@@ -12,9 +12,9 @@ const routes_1 = require("./routes");
 const app = (0, express_1.default)();
 app.use(body_parser_1.default.json());
 app.use((0, cors_1.default)());
-app.use('/api/auth', routes_1.authRoute);
-app.use('/api/users', routes_1.usersRoute);
-app.get('/api', (req, res) => res.send('Welcome to My API'));
+app.use('/auth', routes_1.authRoute);
+app.use('/users', routes_1.usersRoute);
+app.get('/', (req, res) => res.send('Welcome to My API'));
 app.use((req, res, next) => {
     next((0, http_errors_1.default)(404));
 });

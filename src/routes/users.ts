@@ -1,7 +1,7 @@
-import { Router } from 'express'
+import { Router, Request, Response } from 'express'
 
 const router = Router()
 
-router.get('/', () => console.log('get user'))
+router.get('/', (req: Request, res: Response) => res.json({ message: 'ok' }))
 
 export default router
